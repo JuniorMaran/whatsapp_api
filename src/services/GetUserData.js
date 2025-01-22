@@ -3,7 +3,7 @@ import User from '../models/UserData.js';
 const GetUserData = async () => {
   try {
     const users = await User.find();
-    console.log("users => ", users);
+
     return users.map(user => ({ phone: user.phone, name: user.name })); 
   } catch (error) {
     console.error('Error fetching user data:', error);

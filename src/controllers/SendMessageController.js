@@ -5,7 +5,7 @@ import GetUserData from '../services/GetUserData.js';
 const SendMessageController = async (req, res) => {
     try {
       const users = await GetUserData();
-      console.log("users 2 => ", users);
+
       users.map(user => MessageBody(user.name, user.phone))
       res.json({ success: true, data: users });
   } catch (error) {
